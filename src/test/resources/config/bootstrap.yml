@@ -1,0 +1,7 @@
+PROJECT_NAME: telegramm-service-api
+
+management.contextPath: /admin
+management.security.enabled: false
+management.health.config.enabled: false
+
+
