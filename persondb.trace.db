@@ -1,0 +1,12 @@
+2018-04-26 17:19:55 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACCOUNTS" not found; SQL statement:
+/* AccountDao.findById */ select * from ACCOUNTS where ID = ? [42102-191]
+2018-04-26 17:21:02 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACCOUNTS" not found; SQL statement:
+/* AccountDao.findById */ select * from ACCOUNTS where ID = ? [42102-191]
+2018-04-26 17:22:59 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACCOUNTS" not found; SQL statement:
+/* AccountDao.findById */ select * from ACCOUNTS where ID = ? [42102-191]
+2018-04-26 17:26:24 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "ACCOUNTS" not found; SQL statement:
+/* AccountDao.findById */ select * from ACCOUNTS where ID = ? [42102-191]

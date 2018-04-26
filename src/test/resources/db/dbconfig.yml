@@ -1,0 +1,23 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8095
+  adminConnectors:
+    - type: http
+      port: 8096
+
+database:
+  driverClass: org.h2.Driver
+  user: sa
+#  password:
+  url: jdbc:h2:~/database-test
+#  url: jdbc:h2:~/database
+  properties:
+    charSet: UTF-8
+  maxWaitForConnection: 1s
+  validationQuery: "/* MyService Health Check */ SELECT 1"
+  minSize: 8
+  maxSize: 32
+  checkConnectionWhileIdle: false
+  evictionInterval: 10s
+  minIdleTime: 1 minute
