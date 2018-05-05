@@ -21,6 +21,8 @@ local.properties
 .loadpath
 .nb-gradle-properties
 *.log
+*.iml
+*.db
 
 # External tool builders
 .externalToolBuilders/

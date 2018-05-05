@@ -10,11 +10,6 @@ import org.junit.Test;
 import ru.mccarl.moneytransfer.api.App;
 import ru.mccarl.moneytransfer.api.AppConfig;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-
 import static io.restassured.RestAssured.given;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.Assert.assertTrue;

@@ -11,7 +11,6 @@ database:
   user: sa
 #  password:
   url: jdbc:h2:~/database-test
-#  url: jdbc:h2:~/database
   properties:
     charSet: UTF-8
   maxWaitForConnection: 1s

@@ -7,7 +7,7 @@ import io.dropwizard.setup.Environment;
 
 import lombok.extern.slf4j.Slf4j;
 import org.skife.jdbi.v2.DBI;
-import ru.mccarl.moneytransfer.api.controller.RESTClientController;
+import ru.mccarl.moneytransfer.api.controller.Controller;
 import ru.mccarl.moneytransfer.api.dao.AccountDao;
 
 import java.sql.Connection;
@@ -45,11 +45,11 @@ public class App extends Application<AppConfig> {
         final DBI jdbi = factory.build(environment, configuration.getDataSourceFactory(), "h2");
 
         final AccountDao personDAO = jdbi.onDemand(AccountDao.class);
-        final RESTClientController personResource = new RESTClientController(personDAO);
+        final Controller personResource = new Controller(personDAO);
 
         environment.jersey().register(personResource);
     }
-
+//create db with examples data for work service
     public static void createDb() {
         Connection conn = null;
         Statement stmt = null;

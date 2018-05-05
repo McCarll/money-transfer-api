@@ -1,3 +1,6 @@
+
+# TASK
+
 Design and implement a RESTful API (including data model and the backing implementation) for money
 transfers between accounts.
 Explicit requirements:
@@ -12,3 +15,23 @@ container/server)
 Implicit requirements:
 1 - the code produced by you is expected to be of high quality.
 2 - there are no detailed requirements, use common sense.
+
+# API
+## Get info for one account by id. 
+### Request
+```
+/transfer?accountId=1
+```
+### Response
+```
+[{"id":"<id>", "amount":"<amount>"}]
+```
+## Do money transfer between two accounts by ids
+### Request
+```
+/transfer?outgoingAccount=<accountId1>&ingoingAccount=<accountId2>&amount=<amount for transfer>
+```
+### Response
+```
+[{"id":"<id>", "amount":"<amount>"},{"id":"<id>", "amount":"<amount>"}]
+```
