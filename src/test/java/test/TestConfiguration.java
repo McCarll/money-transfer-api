@@ -53,6 +53,8 @@ public class TestConfiguration extends Configuration {
             stmt.executeUpdate(sql);
             sql = "INSERT INTO ACCOUNTS VALUES(3,50)";
             stmt.executeUpdate(sql);
+            sql = "INSERT INTO ACCOUNTS VALUES(4,50)";
+            stmt.executeUpdate(sql);
             stmt.close();
             conn.close();
         } catch (SQLException se) {

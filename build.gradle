@@ -12,11 +12,10 @@ dependencies {
     compile 'io.dropwizard:dropwizard-jdbi:1.3.1'
     compile group: 'javax.persistence', name: 'javax.persistence-api', version: '2.2'
     testCompile(
-            'io.dropwizard:dropwizard-testing:1.3.1',
-            'org.mockito:mockito-core:2.+'
-//            'io.rest-assured:rest-assured:3.1.0'
+            'io.dropwizard:dropwizard-testing:1.3.1'
     )
     testCompile group: 'io.rest-assured', name: 'rest-assured', version: '3.1.0'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.18.3'
 }
 
 apply plugin: 'application'
@@ -26,8 +25,8 @@ mainClassName = 'ru.mccarl.moneytransfer.api.App'
 run {
     args 'server', './config.yml'
 }
-//test {
-//    args 'server', './config.yml'
-////    args 'server', './src/test/resources/db/dbconfig.yml'
-//
-//}
+subprojects {
+    tasks.withType(Test) {
+        maxParallelForks = Runtime.runtime.availableProcessors()
+    }
+}
