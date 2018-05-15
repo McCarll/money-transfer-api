@@ -25,8 +25,3 @@ mainClassName = 'ru.mccarl.moneytransfer.api.App'
 run {
     args 'server', './config.yml'
 }
-subprojects {
-    tasks.withType(Test) {
-        maxParallelForks = Runtime.runtime.availableProcessors()
-    }
-}

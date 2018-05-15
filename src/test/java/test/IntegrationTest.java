@@ -86,36 +86,6 @@ public class IntegrationTest {
         checkResponseByRequest(responseBodyList, requests);
     }
 
-    @Test // the most impossible test - duplicate transfer request in one moment
-    public void testDoMultipleUsersTransfersWithDuplicatedAccount() {
-        List<String> stringList = new ArrayList<>();
-        List<String[]> requests = new ArrayList<>();
-//        simple format for create request
-//        outgointId,ingoingId,amount,amountInAcc1,amountInAcc2
-        String[] request = "1,4,2,46,54".split(",");
-        requests.add(request);
-        request = "1,4,2,46,54".split(",");
-        requests.add(request);
-        requests.forEach(item ->
-                stringList.add("http://localhost:" + RULE.getLocalPort() +
-                        "/transfer?outgoingAccount=" + item[0] +
-                        "&ingoingAccount=" + item[1] +
-                        "&amount=" + item[2])
-        );
-
-        List<ResponseBody> responseBodyList = new ArrayList<>();
-        stringList.parallelStream().parallel().forEach(item -> {
-            ResponseBody responseBody = given()
-                    .contentType(ContentType.JSON)
-                    .when()
-                    .post(item)
-                    .getBody();
-            responseBodyList.add(responseBody);
-        });
-        checkResponseByRequest(responseBodyList, requests);
-
-    }
-
     @Test
     public void testDoMultipleUsersTransfersIncAndDecAmount() {
         List<String> stringList = new ArrayList<>();
